@@ -18,7 +18,7 @@ This GitHub Action adds a marker from your deploy workflows using [Honeycomb's m
 Put the action in the beginning of your worflow:
 
 ```yaml
-- uses: naiduarvind/gha-honeymarker@main
+- uses: Lyka-Pet-Food/gha-honeymarker@main
   with:
     # Required: Honeycomb API key - needed to send markers.
     apikey: ${{ secrets.BUILDEVENTS_APIKEY }}
@@ -38,12 +38,12 @@ Put the action in the beginning of your worflow:
 
 ### Inputs
 
-Name         | Required | Description                                                       | Type   | Default
--------------|----------|-------------------------------------------------------------------|--------|--------
-`apikey`     | yes      | API key used to communicate with the Honeycomb API.               | string | 
-`dataset`    | yes      | Honeycomb dataset to use.                                         | string |
-`type`       | no       | Identifier for the marker (default = "workflow name").            | string | ${{ github.workflow }}
-`message`    | no       | The message describing the marker (default = "job id-job status").| string | ${{ github.run-id}}-${{ job.status }} 
+| Name      | Required | Description                                                        | Type   | Default                               |
+|-----------|----------|--------------------------------------------------------------------|--------|---------------------------------------|
+| `apikey`  | yes      | API key used to communicate with the Honeycomb API.                | string |                                       |
+| `dataset` | yes      | Honeycomb dataset to use.                                          | string |                                       |
+| `type`    | no       | Identifier for the marker (default = "workflow name").             | string | ${{ github.workflow }}                |
+| `message` | no       | The message describing the marker (default = "job id-job status"). | string | ${{ github.run-id}}-${{ job.status }} |
 
 ### Outputs
 

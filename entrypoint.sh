@@ -3,7 +3,7 @@
 set -euxo pipefail
 
 function install_binary() {
-    go get github.com/honeycombio/honeymarker
+    go install github.com/honeycombio/honeymarker@latest
 }
 
 function create_marker() {
